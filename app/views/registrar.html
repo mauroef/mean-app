@@ -1,0 +1,24 @@
+<form novalidate class="simple-form">
+    
+    <div class="row">
+        <div class="col-md-3">
+            Equipo 1 <input type="text" ng-model="partido.nombre_equipo1" class="form-control" id="txtNombreEquipo1">
+        </div>
+        <div class="col-md-3">
+            Marcador <input type="text" ng-model="partido.marcador_equipo_1" class="form-control" style="width: 50px" id="txtMarcador1"></form>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-3">
+            Equipo 2 <input type="text" ng-model="partido.nombre_equipo2" class="form-control" id="txtNombreEquipo2">
+        </div>
+        <div class="col-md-3">
+            Marcador<input type="text" ng-model="partido.marcador_equipo_2" class="form-control" style="width: 50px" id="txtMarcador2"></form>
+        </div>
+    </div>
+
+    <input type="button" ng-click="registrarPartido(partido)" value="Registrar partido" class="btn btn-default">
+
+    <span>{{ lista_partido.length }}</span> partidos registrados.
+</form>

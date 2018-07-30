@@ -1,0 +1,41 @@
+<input type="text" ng-model="buscar" placeholder="Buscar..." class="form-control" />
+<table class="table">
+    <thread>
+        <tr>
+            <th>Equipo 1</th>
+            <th>Marcador</th>
+            <th>Equipo 2</th>
+            <th>Marcador</th>
+        </tr>
+    </thread>
+    <tbody>
+        <tr ng-repeat="partido in lista_partido | filter:buscar">
+            <td ng-model="partido.nombre_equipo_1" ng-hide="editMode">{{ partido.nombre_equipo1 }}</td>
+            <td ng-show="editMode" ng-model="partido.nombre_equipo1" >
+                <input type="text" ng-model="partido.nombre_equipo1">     
+            </td>
+            
+            <td ng-model="partido.marcador_equipo_1" ng-hide="editMode">{{ partido.marcador_equipo_1 }}</td>
+            <td ng-show="editMode" ng-model="partido.marcador_equipo_1">
+                <input type="text" ng-model="partido.marcador_equipo_1">
+            </td>
+            
+            <td ng-model="partido.nombre_equipo_2" ng-hide="editMode">{{ partido.nombre_equipo2 }}</td>
+            <td ng-show="editMode" ng-model="partido.nombre_equipo2">
+                <input type="text" ng-model="partido.nombre_equipo2">
+            </td>
+            
+            <td ng-model="partido.marcador_equipo_2" ng-hide="editMode">{{ partido.marcador_equipo_2 }}</td>
+            <td ng-show="editMode" ng-model="partido.marcador_equipo_2">
+                <input type="text" ng-model="partido.marcador_equipo_2">
+            </td>
+            
+            <td>
+                <input type="button" value="Eliminar" ng-click="EliminarPartido(partido)" class="btn btn-default"/>
+                <input type="button" value="Editar" ng-click="editMode = true; editar(partido);" class="btn btn-default"/>
+                <input type="button" value="Cancelar" ng-click="editMode = false; cancelar();" ng-show="editMode" class="btn btn-default"/>
+                <input type="button" value="Guardar Cambios" ng-click="editMode = false; actualizarPartido(partido)" ng-show="editMode" class="btn btn-default"/>                                
+            </td>
+        </tr>              
+    </tbody>
+</table>
