@@ -1,7 +1,7 @@
 # mean-app
 
-Aplicación CRUD utilizando Mean Stack.
+Mean Stack CRUD application.
 
-Tecnologías involucradas:
+Technologies:
 
 Mongo DB - Express - Angular JS - Node - Yeoman
